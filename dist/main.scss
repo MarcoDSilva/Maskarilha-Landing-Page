@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap');
+
+$primary-color: #333;
+$secondary-color: #444;
+$background-color: #979dac;
+$overlay-color: rgba(0,0,0,0.6);
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: $primary-color;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.5;
+    color: $primary-color;
+    font-size: 1.2rem;;
+}
+
+h1,h2,h3,h4{
+    line-height: 1.2;
+}
+
+a {
+    color: $secondary-color;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    width:100%;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 2rem;
+}
+
+.navbar {
+    font-size: 1.3rem;
+    padding-top:0.4rem;
+    padding-bottom:0.4rem;
+
+    .container {
+        display:grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .logo {
+        font-size: 1.9rem;
+    }
+
+    .nav {
+        justify-self: flex-end;
+        display:flex;
+        align-items:center;
+
+        a{
+            padding: 0 1rem;
+        }
+
+        a:hover{
+            color:#555;
+        }
+    }
+}
+
+/* product presentation section above */
+.imgSection {
+    margin: 2rem 0;
+
+    .container {
+        display:grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 4.5rem;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            max-width: 400px;
+            max-height: 400px;
+            min-width: 5rem;
+            min-height: 5rem;
+        }
+    }
+
+    h1{
+        font-size:3.2rem;
+        color: $primary-color;
+    }
+
+    p{
+        margin: 1.2rem 0;
+    }
+}
+
+/* slogan above */
+.slogan {
+    position: relative;
+    /* Thanks to Kobby Mendez for sharing their work on Unsplash. */
+    background: url('./img/sloganMask.jpg') no-repeat center/cover;
+    height:500px;    
+   
+    .sloganContainer{
+        height:100%;
+        display:flex;
+        flex-direction: column;
+        align-self: center;
+        justify-content: center;
+        text-align: center;
+        margin:auto;
+        max-width: 860px;
+        padding: 4rem;
+
+        h3,h2, p {
+            color:white;
+        }
+    
+        h2{
+            font-size:3.3rem;
+            margin-top:2rem;
+        }
+    
+        h3 {
+            font-size:1.5rem;
+        }
+    
+        p{
+            font-size:1rem;
+            margin-top:1.6rem;
+        }
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: $overlay-color;
+    }
+
+    
+}
+
+/* image gallery */
+
+.imgGallery {
+    .galleryContainer {
+        display:grid;
+        grid-template-columns: repeat(5 ,1fr);  
+
+        a:first-child{
+            // both of these are the same as start-1 end-3
+            grid-row:1/3;
+            grid-column: 1/3;
+        }
+
+        a:nth-child(5){
+            grid-column: 3/5;
+        }
+
+        img, a{
+            width:100%;
+            height:100%;
+        }
+    }
+}
+
+/* Footer */
+footer {
+    background: $secondary-color;
+    padding: 3rem 2rem;
+    line-height: 1.85rem;
+
+    h2,h3, a, p{
+        color:#fff
+    }
+
+    h2 {
+        font-size:1.6rem;
+        margin-bottom: .7rem;
+    }
+
+    h3 {
+        font-size: 1.05rem;
+        margin-bottom: .7rem;
+    }
+
+    .footerContainer{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    a {
+        i{
+            color:$background-color;
+        }
+    }
+}
+
+/* form */
+.email-form {
+    width: 100%;
+    display: inline-block;
+    background-color: #555;
+    position:relative;
+    border-radius: 15px;
+    line-height: 0;
+    margin-top:.7rem;
+
+    .form-control {
+        display:inline-block;
+        border:0;
+        outline: 0;
+        font-size: 1rem;
+        color: #ddd;
+        background-color: transparent;
+        margin: 0;
+        pad: 0 3rem 0 1.5rem;
+        width: 100%;
+        height:35px;
+        border-radius: 25px;
+        text-align: center;
+    }
+
+    .submit {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40px;
+        height:35px;
+        margin:0;
+        padding:0;
+        outline:0;
+        border:0;
+        color:#333;
+        cursor:pointer;
+        border-radius: 0 20px 20px 0;
+        background-color: whitesmoke;
+        text-align: center;
+    }
+}
+
+
+/* extras */
+.btn {
+    display: inline-block;
+    background-color: $primary-color;
+    padding: 0.6rem 1.15rem;
+    color:white;
+    border:none;
+    cursor:pointer;
+    font-size:1.1rem;
+    border-radius:1.3rem;
+}
+
+.btn:hover {
+    background: $secondary-color;
+}
+
+
+
+@media(max-width:700px) {
+    .imgSection {
+        .container{
+            grid-template-columns: 1fr;
+            text-align: center;
+
+            div:first-child{
+                order:2;
+            }
+
+            div:last-child{
+                order:-1;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                margin: auto;
+            }
+        }
+    }
+
+    .imgGallery {
+        .galleryContainer {
+            grid-template-columns: repeat(3,1fr);
+
+            a:first-child {
+                grid-row:1/1;
+                grid-column: 1/1;
+            }
+
+            a:nth-child(5){
+                grid-row:2/2;
+                grid-column: 2/4;;
+            }
+
+            a:nth-child(4) {
+                display:none;
+            }
+        }
+    }
+
+    .footer{
+        padding:2rem 0;
+
+        .footerContainer {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+
+        div:nth-child(2), div:nth-child(3) {
+            display:none;
+        }
+    }
+}
