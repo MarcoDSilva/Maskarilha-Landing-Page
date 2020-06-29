@@ -66,8 +66,10 @@ const createList = (arr) => {
     
     for(let i = 0; i < arr.length; i++) {
         const li = document.createElement('li')
-        li.setAttribute('href', '#')
-        li.innerText = arr[i]
+        const a = document.createElement('a')
+        li.appendChild(a)        
+        a.setAttribute('href', '#')
+        a.innerText = arr[i]
         ul.appendChild(li)
     }
 
